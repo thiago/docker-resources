@@ -1,8 +1,8 @@
-FROM trsouz/ssh
+FROM debian:wheezy
 
 RUN apt-get update -qq \
     && apt-get install -y -qq \
-    rsync \
+    ssh \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get autoremove
 
