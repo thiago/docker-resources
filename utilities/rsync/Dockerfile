@@ -6,4 +6,4 @@ RUN apt-get update -qq \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get autoremove
 
-ENTRYPOINT ssh
+ENTRYPOINT rsync
