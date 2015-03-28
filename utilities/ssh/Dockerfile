@@ -6,6 +6,7 @@ RUN apt-get update -qq \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get autoremove
 
-ADD run.sh /run.sh
-RUN chmod +x /run.sh && mkdir -p /root/.ssh
-ENTRYPOINT exec /run.sh
+ADD ssh /usr/local/bin/ssh
+RUN chmod +x /usr/local/bin/ssh && mkdir -p /root/.ssh
+ENTRYPOINT ["/usr/local/bin/ssh"]
+CMD []
